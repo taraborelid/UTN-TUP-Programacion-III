@@ -1,0 +1,40 @@
+/* Estilo general del cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin-top: 50px;
+}
+
+/* Título */
+h1 {
+  color: #333;
+}
+
+/* Contenedor de botones */
+.choices {
+  margin: 20px;
+}
+
+/* Estilo de los botones */
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Resultado del juego */
+#resultado {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #222;
+}
+
+/* Botón de reinicio */
+#reset {
+  margin-top: 30px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+}

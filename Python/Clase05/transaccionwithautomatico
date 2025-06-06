@@ -1,0 +1,39 @@
+import psycopg2 as bd # esto es para poder conectarnos a Postgre
+
+conexion = bd.connect(
+    user="postgres",
+    password="admin",
+    host="localhost",
+    port="5432",
+    database="test_bd"
+)
+
+try:
+    with conexion: # esto es para que la conexion se cierre automaticamente al final del bloque
+        with conexion.cursor() as cursor: # un cursor es un objeto que nos permitira ejecutar sentencias de sql postg
+            
+
+            sentencia = 'INSERT INTO persona (nombre, apellido, email) VALUES (%s, %s, %s);' # %s en sql significa que es un placeholder, este placeholder se sustituira por el valor que le pasemos
+            valores = ('Maria', 'Esparza123456', 'mesparza@gmail.com')
+            cursor.execute(sentencia, valores) # el segundo argumento es una tupla de tuplas
+            
+            sentencia = 'UPDATE persona SET nombre = %s, apellido = %s, email = %s WHERE id_persona = %s'
+            valores = ('Juan', 'Lopez', 'jlopez@gmail.com',26)
+            cursor.execute(sentencia, valores) # el segundo argumento es una tupla de tuplas
+            
+            # aqui se cierra la transaccion
+            conexion.commit() # esto es para guardar los cambios en la base de datos haciendo el commit manualmente
+            sentencia = 'SELECT * FROM persona'
+            cursor.execute(sentencia)
+            registros = cursor.fetchall() # fetchall() es un metodo que nos permite obtener todos los registros de la consulta
+            for registro in registros:
+                print(registro)
+            print('Termina la transaccion')
+            
+except Exception as e:
+    print(f'Ocurrio un error, se hizo un rollback: {e}')
+finally:
+    print('Se cierra la conexion a la base de datos')
+    conexion.close()
+
+# https://www.psycopg.org/docs/usage.html

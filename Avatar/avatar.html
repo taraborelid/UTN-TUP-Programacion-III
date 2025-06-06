@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>LA LEYENDA DE AANG: AVATAR</title>
+    
+</head>
+<body>
+    <h1>AVATAR 🔥 💧 🌱 🌪️</h1><!-- Esto es estatico, no cambia, el h1 es el encabezado principal de la pagina -->
+
+    <section id="seleccionar-personaje">
+        <h2>Elige tu personaje</h2> 
+
+        <!-- La etiqueta label es para que el usuario pueda ver el nombre de su personaje
+        type es el tipo de input, en este caso es un radio, name es el nombre del input, id es el id del input
+        el id del input es el mismo que el for de la etiqueta label, esto es para que cuando el usuario haga click en el label, se seleccione el input -->
+        
+        
+        
+        <input type="radio" name="personaje" id="zuko"/> <!-- La etiqueta input es para que el usuario pueda escribir su nombre -->
+        <label for="zuko">Zuko</label>
+        
+        <input type="radio" name="personaje" id="katara"/>
+        <label for="katara">Katara</label>
+        
+        <input type="radio" name="personaje" id="aang"/>
+        <label for="aang">Aang</label>
+        
+        <input type="radio" name="personaje" id="toph"/>
+        <label for="toph">Toph</label>
+
+        
+
+        <button id="boton-personaje">Seleccionar</button><!-- La etiqueta button es para que el usuario pueda seleccionar su personaje -->
+    </section>
+
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque</h2>
+        
+        <p>Tu personaje <span id="personaje-jugador"></span> tiene <span>3</span> vidas</p> <!-- la etiqueta span es para que el usuario pueda ver cuantas vidas tiene -->
+        <p>El personaje <span id="personaje-enemigo"></span> tiene <span>3</span> vidas</p>
+
+        <p>
+        <button id="boton-fuego">Fuego 🔥</button>
+        <button id="boton-agua">Agua 💧</button>
+        <button id="boton-tierra">Tierra 🌱</button>
+        <button id="boton-aire">Aire 🌪️</button>
+        </p>
+
+        <p id="resultado"></p>
+    </section>
+
+    <section id="mensajes"><!-- Sera un parrafo dinamico, esto quiere decir que el usuario podra ver los mensajes de acuerdo a lo que elija -->
+        <h2>Mensajes</h2>
+        <p>Tu personaje ataco con todo el podes del FUEGO, el personaje ENEMIGO ataco con el medio poder de la TIERRA - GANASTE 🎉</p>
+    </section>
+
+    <section id="reiniciar">
+        <h2>Reiniciar</h2>
+        <button id="boton-reiniciar">Reiniciar</button><!-- La etiqueta button es para que el usuario pueda reiniciar el juego -->
+    </section>
+    <script src="./js/avatar.js"></script>
+    
+    </body>
+
+</html>
